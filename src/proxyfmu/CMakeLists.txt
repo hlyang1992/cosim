@@ -4,7 +4,9 @@ set(thriftCppSourcesDir "${generatedSourcesDir}/proxyfmu/thrift")
 file(MAKE_DIRECTORY "${generatedSourcesDir}")
 file(MAKE_DIRECTORY "${thriftCppSourcesDir}")
 
-find_program(THRIFT_EXECUTABLE NAMES thrift)
+find_program(THRIFT_EXECUTABLE NAMES thrift HINTS "${CONAN_THRIFT_ROOT}" PATH_SUFFIXES "bin")
+
+message(STATUS "Thrift compiler: ${THRIFT_EXECUTABLE}")
 
 if (NOT THRIFT_EXECUTABLE)
     message(FATAL_ERROR "The thrift compiler was not found. Cannot generate Thrift sources.")
@@ -45,8 +47,12 @@ set_target_properties(proxyfmu-service PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
 install(
         FILES
-        "${CMAKE_CURRENT_SOURCE_DIR}/boot.thrift"
-        "${CMAKE_CURRENT_SOURCE_DIR}/defs.thrift"
-        "${CMAKE_CURRENT_SOURCE_DIR}/service.thrift"
+        ${thriftServiceDefinitions}
         DESTINATION "${CMAKE_INSTALL_DATADIR}/thrift/definitions"
+)
+
+
+install(
+        DIRECTORY ${thriftCppSourcesDir}
+        DESTINATION "${CMAKE_INSTALL_DATADIR}/thrift/generated/cpp"
 )

@@ -122,7 +122,7 @@ add_library(util OBJECT
         "ecos/util/uuid.cpp"
 )
 set_target_properties(util PROPERTIES POSITION_INDEPENDENT_CODE ON)
-target_link_libraries(util PRIVATE libzip::zip)
+target_link_libraries(util PRIVATE libzip::zip fmt::fmt)
 target_include_directories(util
         PRIVATE
         "${PROJECT_SOURCE_DIR}/include"
@@ -138,7 +138,8 @@ add_library(fmilibcpp OBJECT
         "fmilibcpp/fmi2/fmi2_model_description.cpp"
 )
 set_target_properties(fmilibcpp PROPERTIES POSITION_INDEPENDENT_CODE ON)
-target_link_libraries(fmilibcpp PRIVATE unofficial::fmilib::fmilib)
+target_link_libraries(fmilibcpp PRIVATE  fmilibrary::fmilibrary fmt::fmt)
+
 target_include_directories(fmilibcpp
         PRIVATE
         "${PROJECT_SOURCE_DIR}/include"
@@ -165,7 +166,7 @@ target_link_libraries(libecos
         spdlog::spdlog
         thrift::thrift
         pugixml::pugixml
-        unofficial::fmilib::fmilib
+        fmilibrary::fmilibrary
         "$<TARGET_OBJECTS:util>"
         "$<TARGET_OBJECTS:logger>"
         "$<TARGET_OBJECTS:fmilibcpp>"

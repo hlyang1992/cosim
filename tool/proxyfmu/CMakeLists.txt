@@ -22,7 +22,7 @@ target_link_libraries(proxyfmu
         CLI11::CLI11
         spdlog::spdlog
         thrift::thrift
-        unofficial::fmilib::fmilib
+        fmilibrary::fmilibrary
         "$<TARGET_OBJECTS:util>"
         "$<TARGET_OBJECTS:logger>"
         "$<TARGET_OBJECTS:fmilibcpp>"
