@@ -11,25 +11,14 @@
 namespace fmilibcpp
 {
 
-struct real_attributes
-{
-    std::optional<double> start;
+template <typename  T>
+struct attributes {
+    std::optional<T> start;
 };
-
-struct integer_attributes
-{
-    std::optional<int> start;
-};
-
-struct string_attributes
-{
-    std::optional<std::string> start;
-};
-
-struct boolean_attributes
-{
-    std::optional<bool> start;
-};
+using real_attributes = attributes<double>;
+using integer_attributes = attributes<int>;
+using string_attributes = attributes<std::string>;
+using boolean_attributes = attributes<bool>;
 
 using value_ref = unsigned int;
 using type_attributes = std::variant<integer_attributes, real_attributes, string_attributes, boolean_attributes>;
@@ -55,22 +44,22 @@ struct scalar_variable
 
     [[nodiscard]] bool is_integer() const
     {
-        return typeAttributes.index() == 0;
+        return std::holds_alternative<integer_attributes>(typeAttributes);
     }
 
     [[nodiscard]] bool is_real() const
     {
-        return typeAttributes.index() == 1;
+        return std::holds_alternative<real_attributes>(typeAttributes);
     }
 
     [[nodiscard]] bool is_string() const
     {
-        return typeAttributes.index() == 2;
+        return std::holds_alternative<string_attributes>(typeAttributes);
     }
 
     [[nodiscard]] bool is_boolean() const
     {
-        return typeAttributes.index() == 3;
+        return std::holds_alternative<boolean_attributes>(typeAttributes);
     }
 };
 
