@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cosim:LogConfig xmlns:cosim="http://github.com/Ecos-platform/libcosim/resources/schema/LogConfig">
+
+    <cosim:components>
+        <cosim:component name="Thrust Allocation">
+            <cosim:variable name="F1c"/>
+        </cosim:component>
+        <cosim:component name="Thrust Allocation">
+            <cosim:variable name="F2c"/>
+        </cosim:component>
+        <cosim:component name="Thrust Allocation">
+            <cosim:variable name="F3c"/>
+        </cosim:component>
+        <cosim:component name="Ship">
+            <cosim:variable name="q[1]"/>
+        </cosim:component>
+        <cosim:component name="Ship">
+            <cosim:variable name="q[2]"/>
+        </cosim:component>
+        <cosim:component name="Ship">
+            <cosim:variable name="q[3]"/>
+        </cosim:component>
+    </cosim:components>
+
+</cosim:LogConfig>
