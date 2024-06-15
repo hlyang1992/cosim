@@ -9,6 +9,7 @@ add_example_executable(controlled_temperature controlled_temperature/controlled_
 add_example_executable(controlled_temperature_proxy controlled_temperature/controlled_temperature_proxy.cpp)
 
 add_example_executable(dp_ship dp_ship/dp_ship.cpp)
+add_example_executable(dp_ship_proxy dp_ship/dp_ship_proxy.cpp)
 
 if (WIN32)
     add_example_executable(quarter_truck quarter_truck/quarter_truck.cpp)
