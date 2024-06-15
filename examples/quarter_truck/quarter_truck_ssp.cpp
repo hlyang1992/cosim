@@ -1,15 +1,15 @@
-#include "ecos/algorithm/fixed_step_algorithm.hpp"
-#include "ecos/listeners/csv_writer.hpp"
-#include "ecos/ssp/ssp_loader.hpp"
-#include "ecos/logger/logger.hpp"
+#include "cosim/algorithm/fixed_step_algorithm.hpp"
+#include "cosim/listeners/csv_writer.hpp"
+#include "cosim/ssp/ssp_loader.hpp"
+#include "cosim/logger/logger.hpp"
 
 #include <spdlog/stopwatch.h>
 
-using namespace ecos;
+using namespace cosim;
 
 int main()
 {
-    log::set_logging_level(ecos::log::level::debug);
+    log::set_logging_level(cosim::log::level::debug);
 
     try {
         auto ss = load_ssp(std::string(DATA_FOLDER) + "/ssp/quarter_truck");

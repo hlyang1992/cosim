@@ -1,6 +1,6 @@
 
-#ifndef ECOS_FMI_FMICONTEXT_HPP
-#define ECOS_FMI_FMICONTEXT_HPP
+#ifndef COSIM_FMI_FMICONTEXT_HPP
+#define COSIM_FMI_FMICONTEXT_HPP
 
 #include <cstring>
 #include <fmilib.h>
@@ -72,4 +72,4 @@ public:
 
 } // namespace fmilibcpp
 
-#endif // ECOS_FMI_FMICONTEXT_HPP
+#endif // COSIM_FMI_FMICONTEXT_HPP

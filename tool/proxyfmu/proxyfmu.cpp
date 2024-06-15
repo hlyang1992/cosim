@@ -2,7 +2,7 @@
 #include "handlers/boot_service_handler.hpp"
 #include "handlers/fmu_service_handler.hpp"
 
-#include "ecos/lib_info.hpp"
+#include "cosim/lib_info.hpp"
 
 #include <CLI/CLI.hpp>
 #include <thrift/server/TSimpleServer.h>
@@ -158,7 +158,7 @@ int printHelp(CLI::App& desc)
 
 std::string version()
 {
-    const auto v = ecos::library_version();
+    const auto v = cosim::library_version();
     std::stringstream ss;
     ss << "v" << v.major << "." << v.minor << "." << v.patch;
     return ss.str();

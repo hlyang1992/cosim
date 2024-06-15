@@ -24,11 +24,11 @@ Example:
 
 ```
 //windows
-cmake . -A x64 -B build -DCMAKE_TOOLCHAIN_FILE="C:/vcpkg/scripts/buildsystems/vcpkg.cmake" -DECOS_BUILD_EXAMPLES=ON -DECOS_BUILD_TESTS=ON -DCMAKE_BUILD_TYPE=Release
+cmake . -A x64 -B build -DCMAKE_TOOLCHAIN_FILE="C:/vcpkg/scripts/buildsystems/vcpkg.cmake" -DCOSIM_BUILD_EXAMPLES=ON -DCOSIM_BUILD_TESTS=ON -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release
 
 //linux
-cmake . -B build -DCMAKE_TOOLCHAIN_FILE="/home/user/vcpkg/scripts/buildsystems/vcpkg.cmake" -DECOS_BUILD_EXAMPLES=ON -DECOS_BUILD_TESTS=ON -DCMAKE_BUILD_TYPE=Release
+cmake . -B build -DCMAKE_TOOLCHAIN_FILE="/home/user/vcpkg/scripts/buildsystems/vcpkg.cmake" -DCOSIM_BUILD_EXAMPLES=ON -DCOSIM_BUILD_TESTS=ON -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
 
@@ -40,7 +40,7 @@ you need to call CMake with `-DVCPKG_TARGET_TRIPLET=x64-windows-static-md`
 ### Example
 
 ```cpp
-using namespace ecos;
+using namespace cosim;
 
 int main() {
     
@@ -75,7 +75,7 @@ int main() {
 ### SSP example
 
 ```cpp
-using namespace ecos;
+using namespace cosim;
 
 int main() {
     
@@ -126,7 +126,7 @@ Options:
 
 To use the python interface, simply clone the project and run:
 
-`pip install ./ecospy`
+`pip install ./cosimpy`
 
 See [here](examples/quarter_truck/quarter_truck.py) for an example.
 

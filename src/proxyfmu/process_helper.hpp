@@ -1,6 +1,6 @@
 
-#ifndef ECOS_PROXYFMU_PROCESS_HELPER_HPP
-#define ECOS_PROXYFMU_PROCESS_HELPER_HPP
+#ifndef COSIM_PROXYFMU_PROCESS_HELPER_HPP
+#define COSIM_PROXYFMU_PROCESS_HELPER_HPP
 
 #include <subprocess/subprocess.h>
 
@@ -125,4 +125,4 @@ void start_process(
 
 } // namespace proxyfmu
 
-#endif // ECOS_PROXYFMU_PROCESS_HELPER_HPP
+#endif // COSIM_PROXYFMU_PROCESS_HELPER_HPP

@@ -1,5 +1,5 @@
-from ecospy import *
-from ecospy.plotter import *
+from cosimpy import *
+from cosimpy.plotter import *
 
 
 class MyListener(SimulationListener):

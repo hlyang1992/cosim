@@ -29,7 +29,7 @@ jobs:
 
       - name: Configure and build
         run: |
-          cmake . -B build -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake" -DECOS_BUILD_EXAMPLES=ON -DECOS_BUILD_TESTS=ON -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          cmake . -B build -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake" -DCOSIM_BUILD_EXAMPLES=ON -DCOSIM_BUILD_TESTS=ON -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           cmake --build build
 
       - name: Test
@@ -40,8 +40,8 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: matrix.build_type == 'Release'
         with:
-          name: ecos
-          path: build/bin/ecos*
+          name: cosim
+          path: build/bin/cosim*
 
   cmake-on-windows:
 
@@ -66,7 +66,7 @@ jobs:
 
       - name: Configure and build
         run: |
-          cmake . -A x64 -B build -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET=x64-windows-static-md -DECOS_BUILD_EXAMPLES=ON -DECOS_BUILD_TESTS=ON -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          cmake . -A x64 -B build -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET=x64-windows-static-md -DCOSIM_BUILD_EXAMPLES=ON -DCOSIM_BUILD_TESTS=ON -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           cmake --build build --config ${{ matrix.build_type }}
 
       - name: Test
@@ -77,5 +77,5 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: matrix.build_type == 'Release'
         with:
-          name: ecos
-          path: build/bin/ecos*
+          name: cosim
+          path: build/bin/cosim*

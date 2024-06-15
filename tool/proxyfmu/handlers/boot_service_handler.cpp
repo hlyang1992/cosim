@@ -29,7 +29,7 @@ void write_data(std::string const& fileName, std::string const& data)
 
 int32_t boot_service_handler::loadFromBinaryData(const std::string& fmuName, const std::string& instanceName, const std::string& data)
 {
-    auto tmp = std::make_unique<ecos::temp_dir>(fmuName);
+    auto tmp = std::make_unique<cosim::temp_dir>(fmuName);
     std::string fmuPath(tmp->path().string() + "/" + fmuName + ".fmu");
 
     write_data(fmuPath, data);

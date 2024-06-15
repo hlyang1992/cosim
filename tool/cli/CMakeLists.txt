@@ -1,7 +1,7 @@
 
-add_executable(ecos main.cpp)
-target_link_libraries(ecos
+add_executable(cosim main.cpp)
+target_link_libraries(cosim
         PRIVATE
-        libecos
+        libcosim
         CLI11::CLI11
 )

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.17)
 file(STRINGS "${CMAKE_SOURCE_DIR}/version.txt" projectVersion)
-project("libecos" VERSION ${projectVersion})
+project("libcosim" VERSION ${projectVersion})
 message("Current ${PROJECT_NAME} version: ${CMAKE_PROJECT_VERSION}\n")
 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/dist" CACHE PATH "Install prefix" FORCE)
@@ -13,16 +13,16 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 # ==============================================================================
 
 option(BUILD_SHARED_LIBS OFF)
-option(ECOS_BUILD_TESTS "Build tests" OFF)
-option(ECOS_BUILD_EXAMPLES "Build examples" OFF)
-option(ECOS_BUILD_CLI "Build CLI" ON)
-option(ECOS_BUILD_CLIB "Build C library" ON)
+option(COSIM_BUILD_TESTS "Build tests" OFF)
+option(COSIM_BUILD_EXAMPLES "Build examples" OFF)
+option(COSIM_BUILD_CLI "Build CLI" ON)
+option(COSIM_BUILD_CLIB "Build C library" ON)
 
 message(STATUS "Build shared libraries: ${BUILD_SHARED_LIBS}")
-message(STATUS "Build tests: ${ECOS_BUILD_TESTS}")
-message(STATUS "Build examples: ${ECOS_BUILD_EXAMPLES}")
-message(STATUS "Build CLI: ${ECOS_BUILD_CLI}")
-message(STATUS "Build C library: ${ECOS_BUILD_CLIB}")
+message(STATUS "Build tests: ${COSIM_BUILD_TESTS}")
+message(STATUS "Build examples: ${COSIM_BUILD_EXAMPLES}")
+message(STATUS "Build CLI: ${COSIM_BUILD_CLI}")
+message(STATUS "Build C library: ${COSIM_BUILD_CLIB}")
 
 
 # ==============================================================================
@@ -70,11 +70,11 @@ find_package(pugixml REQUIRED)
 add_subdirectory(src)
 add_subdirectory(tool)
 
-if (ECOS_BUILD_EXAMPLES)
+if (COSIM_BUILD_EXAMPLES)
     add_subdirectory(examples)
 endif ()
 
-if (ECOS_BUILD_TESTS)
+if (COSIM_BUILD_TESTS)
     find_package(Catch2 REQUIRED)
     enable_testing()
     add_subdirectory(tests)
@@ -86,26 +86,26 @@ endif ()
 # ==============================================================================
 
 # configure_package_config_file(cmake/config.cmake.in
-#         ${CMAKE_CURRENT_BINARY_DIR}/ecos-config.cmake
-#         INSTALL_DESTINATION ${CMAKE_INSTALL_DATADIR}/ecos
+#         ${CMAKE_CURRENT_BINARY_DIR}/cosim-config.cmake
+#         INSTALL_DESTINATION ${CMAKE_INSTALL_DATADIR}/cosim
 #         NO_SET_AND_CHECK_MACRO)
 # write_basic_package_version_file(
-#         ${CMAKE_CURRENT_BINARY_DIR}/ecos-config-version.cmake
+#         ${CMAKE_CURRENT_BINARY_DIR}/cosim-config-version.cmake
 #         VERSION ${CMAKE_PROJECT_VERSION}
 #         COMPATIBILITY SameMajorVersion)
 
 # install(
 #         FILES
-#         ${CMAKE_CURRENT_BINARY_DIR}/ecos-config.cmake
-#         ${CMAKE_CURRENT_BINARY_DIR}/ecos-config-version.cmake
+#         ${CMAKE_CURRENT_BINARY_DIR}/cosim-config.cmake
+#         ${CMAKE_CURRENT_BINARY_DIR}/cosim-config-version.cmake
 #         DESTINATION
-#         ${CMAKE_INSTALL_DATADIR}/ecos)
+#         ${CMAKE_INSTALL_DATADIR}/cosim)
 
 install(
-        TARGETS libecos libecosc ecos proxyfmu
-        EXPORT ecos-targets
+        TARGETS libcosim libcosimc cosim proxyfmu
+        EXPORT cosim-targets
 )
 install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-install(EXPORT ecos-targets
-        NAMESPACE ecos::
-        DESTINATION ${CMAKE_INSTALL_DATADIR}/ecos)
+install(EXPORT cosim-targets
+        NAMESPACE cosim::
+        DESTINATION ${CMAKE_INSTALL_DATADIR}/cosim)

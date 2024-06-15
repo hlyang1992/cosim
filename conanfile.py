@@ -63,10 +63,10 @@ class helloRecipe(ConanFile):
         tc = CMakeToolchain(self)
 
         tc.cache_variables["BUILD_SHARED_LIBS"] = self.options.shared
-        tc.cache_variables["ECOS_BUILD_TESTS"] = self.options.build_tests
-        tc.cache_variables["ECOS_BUILD_EXAMPLES"] = self.options.build_examples
-        tc.cache_variables["ECOS_BUILD_CLI"] = self.options.build_cli
-        tc.cache_variables["ECOS_BUILD_CLIB"] = self.options.build_clib
+        tc.cache_variables["COSIM_BUILD_TESTS"] = self.options.build_tests
+        tc.cache_variables["COSIM_BUILD_EXAMPLES"] = self.options.build_examples
+        tc.cache_variables["COSIM_BUILD_CLI"] = self.options.build_cli
+        tc.cache_variables["COSIM_BUILD_CLIB"] = self.options.build_clib
         tc.generate()
 
     def build(self):

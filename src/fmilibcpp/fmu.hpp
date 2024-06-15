@@ -1,6 +1,6 @@
 
-#ifndef ECOS_FMI_FMU_FMU_HPP
-#define ECOS_FMI_FMU_FMU_HPP
+#ifndef COSIM_FMI_FMU_FMU_HPP
+#define COSIM_FMI_FMU_FMU_HPP
 
 #include "model_description.hpp"
 #include "slave.hpp"
@@ -27,4 +27,4 @@ std::unique_ptr<fmu> loadFmu(const std::filesystem::path& fmuPath, bool fmiLoggi
 
 } // namespace fmilibcpp
 
-#endif // ECOS_FMI_FMU_FMU_HPP
+#endif // COSIM_FMI_FMU_FMU_HPP

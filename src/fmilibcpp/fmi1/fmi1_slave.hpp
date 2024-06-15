@@ -1,10 +1,10 @@
 
-#ifndef ECOS_FMI_FMI1_SLAVE_HPP
-#define ECOS_FMI_FMI1_SLAVE_HPP
+#ifndef COSIM_FMI_FMI1_SLAVE_HPP
+#define COSIM_FMI_FMI1_SLAVE_HPP
 
 #include "fmi1_model_description.hpp"
 
-#include "ecos/util/temp_dir.hpp"
+#include "cosim/util/temp_dir.hpp"
 
 #include "fmilibcpp/fmicontext.hpp"
 #include "fmilibcpp/slave.hpp"
@@ -22,7 +22,7 @@ private:
     fmi1_import_t* handle_;
     const model_description md_;
     std::shared_ptr<fmicontext> ctx_;
-    std::shared_ptr<ecos::temp_dir> tmpDir_;
+    std::shared_ptr<cosim::temp_dir> tmpDir_;
 
     double start_time_{};
     double stop_time_{};
@@ -32,7 +32,7 @@ public:
         const std::shared_ptr<fmicontext>& ctx,
         const std::string& instanceName,
         model_description md,
-        std::shared_ptr<ecos::temp_dir> tmpDir,
+        std::shared_ptr<cosim::temp_dir> tmpDir,
         bool fmiLogging);
 
     [[nodiscard]] const model_description& get_model_description() const override;
@@ -60,4 +60,4 @@ public:
 
 } // namespace fmilibcpp
 
-#endif // ECOS_FMI_FMI1_SLAVE_HPP
+#endif // COSIM_FMI_FMI1_SLAVE_HPP

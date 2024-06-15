@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecos:ChartConfig xmlns:ecos="http://github.com/Ecos-platform/libecos/resources/schema/ChartConfig">
+<cosim:ChartConfig xmlns:cosim="http://github.com/Ecos-platform/libcosim/resources/schema/ChartConfig">
 
-    <ecos:chart>
-        <ecos:timeseries title="Quarter-truck" label="Height[m]">
-            <ecos:series>
-                <ecos:component name="chassis">
-                    <ecos:variable name="zChassis"/>
-                </ecos:component>
-                <ecos:component name="wheel">
-                    <ecos:variable name="zWheel"/>
-                </ecos:component>
-                <ecos:component name="ground">
-                    <ecos:variable name="zGround"/>
-                </ecos:component>
-            </ecos:series>
-        </ecos:timeseries>
-    </ecos:chart>
+    <cosim:chart>
+        <cosim:timeseries title="Quarter-truck" label="Height[m]">
+            <cosim:series>
+                <cosim:component name="chassis">
+                    <cosim:variable name="zChassis"/>
+                </cosim:component>
+                <cosim:component name="wheel">
+                    <cosim:variable name="zWheel"/>
+                </cosim:component>
+                <cosim:component name="ground">
+                    <cosim:variable name="zGround"/>
+                </cosim:component>
+            </cosim:series>
+        </cosim:timeseries>
+    </cosim:chart>
 
-</ecos:ChartConfig>
+</cosim:ChartConfig>

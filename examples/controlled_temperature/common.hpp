@@ -1,14 +1,14 @@
 
-#ifndef LIBECOS_COMMON_HPP
-#define LIBECOS_COMMON_HPP
+#ifndef LIBCOSIM_COMMON_HPP
+#define LIBCOSIM_COMMON_HPP
 
-#include "ecos/algorithm/fixed_step_algorithm.hpp"
-#include "ecos/logger/logger.hpp"
-#include "ecos/model_resolver.hpp"
-#include "ecos/simulation.hpp"
+#include "cosim/algorithm/fixed_step_algorithm.hpp"
+#include "cosim/logger/logger.hpp"
+#include "cosim/model_resolver.hpp"
+#include "cosim/simulation.hpp"
 
 
-using namespace ecos;
+using namespace cosim;
 
 void run(const std::string& fmuPath)
 {
@@ -38,4 +38,4 @@ void run(const std::string& fmuPath)
     }
 }
 
-#endif // LIBECOS_COMMON_HPP
+#endif // LIBCOSIM_COMMON_HPP

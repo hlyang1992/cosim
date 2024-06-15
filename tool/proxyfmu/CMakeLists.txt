@@ -4,7 +4,7 @@ set(sources
         "handlers/fmu_service_handler.cpp"
         "handlers/boot_service_handler.cpp"
 
-        "${generatedSourcesDir}/ecos/lib_info.cpp"
+        "${generatedSourcesDir}/cosim/lib_info.cpp"
 )
 
 add_executable(proxyfmu ${sources})

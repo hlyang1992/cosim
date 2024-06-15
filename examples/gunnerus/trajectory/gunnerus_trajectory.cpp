@@ -1,17 +1,17 @@
-#include "ecos/algorithm/fixed_step_algorithm.hpp"
-#include "ecos/listeners/csv_writer.hpp"
-#include "ecos/logger/logger.hpp"
-#include "ecos/scenario/scenario_loader.hpp"
-#include "ecos/ssp/ssp_loader.hpp"
+#include "cosim/algorithm/fixed_step_algorithm.hpp"
+#include "cosim/listeners/csv_writer.hpp"
+#include "cosim/logger/logger.hpp"
+#include "cosim/scenario/scenario_loader.hpp"
+#include "cosim/ssp/ssp_loader.hpp"
 
 #include <filesystem>
 #include <spdlog/stopwatch.h>
 
-using namespace ecos;
+using namespace cosim;
 
 int main()
 {
-    log::set_logging_level(ecos::log::level::debug);
+    log::set_logging_level(cosim::log::level::debug);
 
     const auto sspFile = std::string(SOURCE_DIR) + "/gunnerus-trajectory.ssp";
     if (!std::filesystem::exists(sspFile)) {

@@ -1,14 +1,14 @@
 
-#include "ecos/algorithm/fixed_step_algorithm.hpp"
-#include "ecos/listeners/csv_writer.hpp"
-#include "ecos/logger/logger.hpp"
-#include "ecos/structure/simulation_structure.hpp"
+#include "cosim/algorithm/fixed_step_algorithm.hpp"
+#include "cosim/listeners/csv_writer.hpp"
+#include "cosim/logger/logger.hpp"
+#include "cosim/structure/simulation_structure.hpp"
 
-using namespace ecos;
+using namespace cosim;
 
 int main()
 {
-    log::set_logging_level(ecos::log::level::debug);
+    log::set_logging_level(cosim::log::level::debug);
 
     simulation_structure ss;
     const std::filesystem::path fmuDir = std::string(DATA_FOLDER) + "/fmus/2.0/quarter-truck";

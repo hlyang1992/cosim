@@ -22,7 +22,7 @@ RUN git clone https://github.com/Microsoft/vcpkg.git
 WORKDIR /home/vcpkg
 RUN ./bootstrap-vcpkg.sh
 
-WORKDIR /home/ecos
+WORKDIR /home/cosim
 COPY . .
-RUN cmake . -B build -DCMAKE_TOOLCHAIN_FILE="/home/vcpkg/scripts/buildsystems/vcpkg.cmake" -DECOS_BUILD_EXAMPLES=ON -DECOS_BUILD_TESTS=ON -DCMAKE_BUILD_TYPE="Release"
+RUN cmake . -B build -DCMAKE_TOOLCHAIN_FILE="/home/vcpkg/scripts/buildsystems/vcpkg.cmake" -DCOSIM_BUILD_EXAMPLES=ON -DCOSIM_BUILD_TESTS=ON -DCMAKE_BUILD_TYPE="Release"
 RUN cmake --build build

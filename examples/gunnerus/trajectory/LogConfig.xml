@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecos:LogConfig xmlns:ecos="http://github.com/Ecos-platform/libecos/resources/schema/LogConfig">
+<cosim:LogConfig xmlns:cosim="http://github.com/Ecos-platform/libcosim/resources/schema/LogConfig">
 
-    <ecos:components>
-        <ecos:component name="vesselModel">
-            <ecos:variable name="cgShipMotion.nedDisplacement.north"/>
-            <ecos:variable name="cgShipMotion.nedDisplacement.east"/>
-            <ecos:variable name="cgShipMotion.nedDisplacement.down"/>
-        </ecos:component>
-    </ecos:components>
+    <cosim:components>
+        <cosim:component name="vesselModel">
+            <cosim:variable name="cgShipMotion.nedDisplacement.north"/>
+            <cosim:variable name="cgShipMotion.nedDisplacement.east"/>
+            <cosim:variable name="cgShipMotion.nedDisplacement.down"/>
+        </cosim:component>
+    </cosim:components>
 
-</ecos:LogConfig>
+</cosim:LogConfig>

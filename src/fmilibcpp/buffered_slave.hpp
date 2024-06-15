@@ -1,6 +1,6 @@
 
-#ifndef ECOS_FMI_BUFFERED_SLAVE_HPP
-#define ECOS_FMI_BUFFERED_SLAVE_HPP
+#ifndef COSIM_FMI_BUFFERED_SLAVE_HPP
+#define COSIM_FMI_BUFFERED_SLAVE_HPP
 
 #include "slave.hpp"
 
@@ -314,4 +314,4 @@ private:
 
 } // namespace fmilibcpp
 
-#endif // ECOS_FMI_BUFFERED_SLAVE_HPP
+#endif // COSIM_FMI_BUFFERED_SLAVE_HPP

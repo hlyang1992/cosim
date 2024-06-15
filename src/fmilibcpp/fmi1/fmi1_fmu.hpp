@@ -1,8 +1,8 @@
 
-#ifndef ECOS_FMI_FMI1_FMU_HPP
-#define ECOS_FMI_FMI1_FMU_HPP
+#ifndef COSIM_FMI_FMI1_FMU_HPP
+#define COSIM_FMI_FMI1_FMU_HPP
 
-#include "ecos/util/temp_dir.hpp"
+#include "cosim/util/temp_dir.hpp"
 
 #include "fmilibcpp/fmicontext.hpp"
 #include "fmilibcpp/fmu.hpp"
@@ -21,10 +21,10 @@ private:
 
     const bool fmiLogging_;
     const model_description md_;
-    std::shared_ptr<ecos::temp_dir> tmpDir_;
+    std::shared_ptr<cosim::temp_dir> tmpDir_;
 
 public:
-    fmi1_fmu(std::unique_ptr<fmicontext> ctx, std::shared_ptr<ecos::temp_dir> tmpDir, bool fmiLogging = true);
+    fmi1_fmu(std::unique_ptr<fmicontext> ctx, std::shared_ptr<cosim::temp_dir> tmpDir, bool fmiLogging = true);
 
     [[nodiscard]] const model_description& get_model_description() const override;
 
@@ -35,4 +35,4 @@ public:
 
 } // namespace fmilibcpp
 
-#endif // ECOS_FMI_FMI1_FMU_HPP
+#endif // COSIM_FMI_FMI1_FMU_HPP

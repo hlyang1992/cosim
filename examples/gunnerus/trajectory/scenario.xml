@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecos:Scenario xmlns:ecos="http://github.com/Ecos-platform/libecos/resources/schema/ScenarioConfig">
+<cosim:Scenario xmlns:cosim="http://github.com/Ecos-platform/libcosim/resources/schema/ScenarioConfig">
 
-    <ecos:action t="50" eps="0.01">
-        <ecos:variable id="vesselModel::reset_position">
-            <ecos:boolean value="true"/>
-        </ecos:variable>
-    </ecos:action>
+    <cosim:action t="50" eps="0.01">
+        <cosim:variable id="vesselModel::reset_position">
+            <cosim:boolean value="true"/>
+        </cosim:variable>
+    </cosim:action>
 
-    <ecos:action t="50.05" eps="0.01">
-        <ecos:variable id="vesselModel::reset_position">
-            <ecos:boolean value="false"/>
-        </ecos:variable>
-        <ecos:variable id="trackController::enable">
-            <ecos:boolean value="true"/>
-        </ecos:variable>
-    </ecos:action>
+    <cosim:action t="50.05" eps="0.01">
+        <cosim:variable id="vesselModel::reset_position">
+            <cosim:boolean value="false"/>
+        </cosim:variable>
+        <cosim:variable id="trackController::enable">
+            <cosim:boolean value="true"/>
+        </cosim:variable>
+    </cosim:action>
 
-</ecos:Scenario>
+</cosim:Scenario>

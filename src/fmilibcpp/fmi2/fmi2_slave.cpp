@@ -29,7 +29,7 @@ fmi2_slave::fmi2_slave(
     const std::shared_ptr<fmicontext>& ctx,
     const std::string& instanceName,
     model_description md,
-    std::shared_ptr<ecos::temp_dir> tmpDir,
+    std::shared_ptr<cosim::temp_dir> tmpDir,
     bool fmiLogging)
     : slave(instanceName)
     , ctx_(ctx)

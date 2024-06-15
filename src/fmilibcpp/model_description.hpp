@@ -1,6 +1,6 @@
 
-#ifndef ECOS_FMI_MODEL_DESCRIPTION_HPP
-#define ECOS_FMI_MODEL_DESCRIPTION_HPP
+#ifndef COSIM_FMI_MODEL_DESCRIPTION_HPP
+#define COSIM_FMI_MODEL_DESCRIPTION_HPP
 
 #include "scalar_variable.hpp"
 
@@ -73,4 +73,4 @@ struct model_description
 
 } // namespace fmilibcpp
 
-#endif // ECOS_FMI_MODEL_DESCRIPTION_HPP
+#endif // COSIM_FMI_MODEL_DESCRIPTION_HPP

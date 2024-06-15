@@ -1,17 +1,17 @@
 
-#include "ecos/algorithm/fixed_step_algorithm.hpp"
-#include "ecos/lib_info.hpp"
-#include "ecos/listeners/csv_writer.hpp"
-#include "ecos/logger/logger.hpp"
-#include "ecos/scenario/scenario_loader.hpp"
-#include "ecos/simulation_runner.hpp"
-#include "ecos/ssp/ssp_loader.hpp"
+#include "cosim/algorithm/fixed_step_algorithm.hpp"
+#include "cosim/lib_info.hpp"
+#include "cosim/listeners/csv_writer.hpp"
+#include "cosim/logger/logger.hpp"
+#include "cosim/scenario/scenario_loader.hpp"
+#include "cosim/simulation_runner.hpp"
+#include "cosim/ssp/ssp_loader.hpp"
 
 #include <CLI/CLI.hpp>
 
 #include <iostream>
 
-using namespace ecos;
+using namespace cosim;
 
 namespace
 {
@@ -208,7 +208,7 @@ void run_simulation(const CLI::App& vm, simulation& sim)
 int main(int argc, char** argv)
 {
 
-    CLI::App app("ecos");
+    CLI::App app("cosim");
     create_options(app);
 
     if (argc == 1) {
@@ -234,7 +234,7 @@ int main(int argc, char** argv)
         run_simulation(app, *sim);
 
     } catch (std::exception& e) {
-        std::cerr << "[ecos] Unhandled Exception reached the top of main: '" << e.what() << "', application will now exit" << std::endl;
+        std::cerr << "[cosim] Unhandled Exception reached the top of main: '" << e.what() << "', application will now exit" << std::endl;
         return 1;
     }
 }

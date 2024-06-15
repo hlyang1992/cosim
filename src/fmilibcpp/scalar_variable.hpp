@@ -1,6 +1,6 @@
 
-#ifndef ECOS_FMI_SCALAR_VARIABLE_HPP
-#define ECOS_FMI_SCALAR_VARIABLE_HPP
+#ifndef COSIM_FMI_SCALAR_VARIABLE_HPP
+#define COSIM_FMI_SCALAR_VARIABLE_HPP
 
 #include <optional>
 #include <stdexcept>
@@ -78,4 +78,4 @@ using model_variables = std::vector<scalar_variable>;
 
 } // namespace fmilibcpp
 
-#endif // ECOS_FMI_SCALAR_VARIABLE_HPP
+#endif // COSIM_FMI_SCALAR_VARIABLE_HPP
