@@ -18,6 +18,12 @@ option(ECOS_BUILD_EXAMPLES "Build examples" OFF)
 option(ECOS_BUILD_CLI "Build CLI" ON)
 option(ECOS_BUILD_CLIB "Build C library" ON)
 
+message(STATUS "Build shared libraries: ${BUILD_SHARED_LIBS}")
+message(STATUS "Build tests: ${ECOS_BUILD_TESTS}")
+message(STATUS "Build examples: ${ECOS_BUILD_EXAMPLES}")
+message(STATUS "Build CLI: ${ECOS_BUILD_CLI}")
+message(STATUS "Build C library: ${ECOS_BUILD_CLIB}")
+
 
 # ==============================================================================
 # Global internal configuration
