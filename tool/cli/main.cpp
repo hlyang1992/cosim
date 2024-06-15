@@ -25,7 +25,8 @@ std::unordered_map<std::string, log::level> map{
     {"off", log::level::off},
 };
 
-log::level lvl = log::level::info;
+// log::level lvl = log::level::info;
+log::level lvl = log::level::debug;
 
 int print_help(const CLI::App& desc)
 {

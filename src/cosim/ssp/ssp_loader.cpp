@@ -1,5 +1,6 @@
 
 #include "cosim/ssp/ssp_loader.hpp"
+#include "cosim/logger/logger.hpp"
 
 #include "ssp.hpp"
 
@@ -27,6 +28,7 @@ public:
         }
 
         for (const auto& connection : connections) {
+            log::debug("Connecting {}:{} to {}:{}", connection.startElement, connection.startConnector, connection.endElement, connection.endConnector);
             const auto& startComponent = components.at(connection.startElement);
             const auto& startConnector = startComponent.connectors.at(connection.startConnector);
             const auto& endComponent = components.at(connection.endElement);
