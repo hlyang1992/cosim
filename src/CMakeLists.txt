@@ -130,6 +130,7 @@ target_include_directories(util
 
 add_library(fmilibcpp OBJECT
         "fmilibcpp/fmu.cpp"
+        "fmilibcpp/model_description.cpp"
         "fmilibcpp/fmi1/fmi1_fmu.cpp"
         "fmilibcpp/fmi1/fmi1_slave.cpp"
         "fmilibcpp/fmi1/fmi1_model_description.cpp"
@@ -138,12 +139,8 @@ add_library(fmilibcpp OBJECT
         "fmilibcpp/fmi2/fmi2_model_description.cpp"
 )
 set_target_properties(fmilibcpp PROPERTIES POSITION_INDEPENDENT_CODE ON)
-target_link_libraries(fmilibcpp PRIVATE  fmilibrary::fmilibrary fmt::fmt)
-
-target_include_directories(fmilibcpp
-        PRIVATE
-        "${PROJECT_SOURCE_DIR}/include"
-        "${PROJECT_SOURCE_DIR}/src")
+target_link_libraries(fmilibcpp PRIVATE  fmilibrary::fmilibrary fmt::fmt nlohmann_json::nlohmann_json)
+target_include_directories(fmilibcpp PRIVATE "${PROJECT_SOURCE_DIR}/include" "${PROJECT_SOURCE_DIR}/src")
 
 add_library(libcosim ${publicHeadersFull} ${privateHeaders} ${sources} ${generatedFiles})
 set_target_properties(libcosim PROPERTIES PREFIX "")
@@ -167,6 +164,7 @@ target_link_libraries(libcosim
         thrift::thrift
         pugixml::pugixml
         fmilibrary::fmilibrary
+        nlohmann_json::nlohmann_json
         "$<TARGET_OBJECTS:util>"
         "$<TARGET_OBJECTS:logger>"
         "$<TARGET_OBJECTS:fmilibcpp>"

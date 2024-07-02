@@ -1,4 +1,4 @@
-
+#pragma once
 #ifndef COSIM_FMI_MODEL_DESCRIPTION_HPP
 #define COSIM_FMI_MODEL_DESCRIPTION_HPP
 
@@ -7,6 +7,11 @@
 #include <algorithm>
 #include <optional>
 #include <vector>
+#include <nlohmann/json.hpp>
+#include <variant>
+#include <type_traits>
+#include <fmt/core.h>
+#include <iostream>
 
 namespace fmilibcpp
 {
@@ -71,6 +76,10 @@ struct model_description
     }
 };
 
+void to_json(nlohmann::json& j, const default_experiment& obj);
+void to_json(nlohmann::json& j, const model_description& obj);
+
 } // namespace fmilibcpp
+
 
 #endif // COSIM_FMI_MODEL_DESCRIPTION_HPP

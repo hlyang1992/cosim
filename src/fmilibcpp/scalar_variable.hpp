@@ -2,11 +2,13 @@
 #ifndef COSIM_FMI_SCALAR_VARIABLE_HPP
 #define COSIM_FMI_SCALAR_VARIABLE_HPP
 
+#include <nlohmann/json_fwd.hpp>
 #include <optional>
 #include <stdexcept>
 #include <string>
 #include <variant>
 #include <vector>
+#include <nlohmann/json.hpp>
 
 namespace fmilibcpp
 {
@@ -65,6 +67,9 @@ struct scalar_variable
 
 using model_variables = std::vector<scalar_variable>;
 
-} // namespace fmilibcpp
+
+
+}
+
 
 #endif // COSIM_FMI_SCALAR_VARIABLE_HPP

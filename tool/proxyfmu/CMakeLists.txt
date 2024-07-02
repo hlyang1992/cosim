@@ -23,6 +23,7 @@ target_link_libraries(proxyfmu
         spdlog::spdlog
         thrift::thrift
         fmilibrary::fmilibrary
+        nlohmann_json::nlohmann_json
         "$<TARGET_OBJECTS:util>"
         "$<TARGET_OBJECTS:logger>"
         "$<TARGET_OBJECTS:fmilibcpp>"

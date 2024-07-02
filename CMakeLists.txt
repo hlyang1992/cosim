@@ -62,6 +62,7 @@ find_package(libzip REQUIRED)
 find_package(CLI11 REQUIRED)
 find_package(fmilibrary REQUIRED)
 find_package(pugixml REQUIRED)
+find_package(nlohmann_json REQUIRED)
 
 # ==============================================================================
 # Targets
@@ -70,9 +71,10 @@ find_package(pugixml REQUIRED)
 add_subdirectory(src)
 add_subdirectory(tool)
 
-if (COSIM_BUILD_EXAMPLES)
-    add_subdirectory(examples)
-endif ()
+add_subdirectory(examples)
+# if (COSIM_BUILD_EXAMPLES)
+    # add_subdirectory(examples)
+# endif ()
 
 if (COSIM_BUILD_TESTS)
     find_package(Catch2 REQUIRED)
@@ -105,7 +107,8 @@ install(
         TARGETS libcosim libcosimc cosim proxyfmu
         EXPORT cosim-targets
 )
-install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+
+# install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 install(EXPORT cosim-targets
         NAMESPACE cosim::
         DESTINATION ${CMAKE_INSTALL_DATADIR}/cosim)

@@ -39,6 +39,7 @@ class helloRecipe(ConanFile):
         self.requires("cli11/[~2.4]")
         self.requires("fmilibrary/[~2.3]")
         self.requires("pugixml/1.14")
+        self.requires("nlohmann_json/3.11.3")
         if self.options.build_tests:
             self.requires("catch2/[~3.6]")
   
